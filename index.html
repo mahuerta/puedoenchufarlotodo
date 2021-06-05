@@ -1,76 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>¿Puedo lavar la ropa ya?</title>
-</head>
-<body>
+  </head>
 
-<style>
-*{font-family: arial;text-align:center;}
-h1{font-size:50px;}
-h2{font-size:120px;margin:0;}
-h3{font-size:30px;display:inline-block;margin-top:10px;}
-.green{border-bottom:5px green solid;}
-.red{border-bottom:5px red solid;}
-.yellow{border-bottom:5px yellow solid;}
-a{color:black;}
-</style>
+  <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RY06KCG7GN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<h1>¿Puedo lavar la ropa ya?</h1>
+      gtag("config", "G-RY06KCG7GN");
+    </script>
 
-<script>
-var date = new Date();
-var hour = date.getHours();
-var day = date.getDay();
-var html;
+    <style>
+      * {
+        font-family: monospace;
+        text-align: center;
+      }
 
-var html_punta = '<h2>NO</h2><h3 class="red">HORA PUNTA, prepara la cartera</h3>';
-var html_llana = '<h2>SÍ</h2><h3 class="yellow">HORA LLANA, hacer unas costillas aun salen caras</h3>';
-var html_valle = '<h2>SÍ</h2><h3 class="green">HORA VALLE, aprovecha y dale caña a la depuradora</h3>';
+      h1 {
+        font-size: 50px;
+      }
 
-var NATIONAL_HOLIDAYS = [
-  'Fri Jan 01 2021',
-  'Wed Jan 06 2021',
-  'Fri Apr 02 2021',
-  'Sat May 01 2021',
-  'Tue Oct 12 2021',
-  'Mon Nov 01 2021',
-  'Mon Dec 06 2021',
-  'Wed Dec 08 2021',
-  'Sat Dec 25 2021',
-]
+      h2 {
+        font-size: 120px;
+        margin: 0;
+      }
 
-// sabado - domingo
-if( (day == 6 || day == 0) || NATIONAL_HOLIDAYS.includes(date.toDateString()) ){
-    html = html_valle;
-}else{
-    if( ( hour >= 10 && hour <= 13 ) || ( hour >= 18 && hour <= 21 ) ){
-        html = html_punta;
-    }else if( hour >= 0 && hour <= 7 ){
+      h3 {
+        font-size: 30px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .green {
+        border-bottom: 5px green solid;
+      }
+
+      .red {
+        border-bottom: 5px red solid;
+      }
+
+      .yellow {
+        border-bottom: 5px yellow solid;
+      }
+
+      a {
+        color: black;
+      }
+    </style>
+
+    <h1>¿Puedo lavar la ropa ya?</h1>
+
+    <script>
+      var date = new Date();
+      var hour = date.getHours();
+      var day = date.getDay();
+      var html;
+
+      var html_punta =
+        '<h2>NO</h2><h3 class="red">HORA PUNTA, prepara la cartera</h3>';
+      var html_llana =
+        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA, hacer unas costillas aun salen caras</h3>';
+      var html_valle =
+        '<h2>SÍ</h2><h3 class="green">HORA VALLE, aprovecha y dale caña a la depuradora</h3>';
+
+      var NATIONAL_HOLIDAYS = [
+        "Fri Jan 01 2021",
+        "Wed Jan 06 2021",
+        "Fri Apr 02 2021",
+        "Sat May 01 2021",
+        "Tue Oct 12 2021",
+        "Mon Nov 01 2021",
+        "Mon Dec 06 2021",
+        "Wed Dec 08 2021",
+        "Sat Dec 25 2021",
+      ];
+
+      // sabado - domingo
+      if (
+        day == 6 ||
+        day == 0 ||
+        NATIONAL_HOLIDAYS.includes(date.toDateString())
+      ) {
         html = html_valle;
-    }else{
-        html = html_llana;
-    }
-}
+      } else {
+        if ((hour >= 10 && hour <= 13) || (hour >= 18 && hour <= 21)) {
+          html = html_punta;
+        } else if (hour >= 0 && hour <= 7) {
+          html = html_valle;
+        } else {
+          html = html_llana;
+        }
+      }
 
-document.write(html);
+      document.write(html);
 
-setTimeout(function(){
-    document.getElementById('info').style.display = 'block';
-}, 1300);
-</script>
+      setTimeout(function () {
+        document.getElementById("info").style.display = "block";
+      }, 1300);
+    </script>
 
-<div id="info" style="display:none">
+    <div id="info" style="display: none">
+      <br /><br /><br />
 
-    <br><br><br>
-
-    Hecho con ❤️ por <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
-
-</div>
-
-
-</body>
-</html> 
+      Hecho con ❤️ por
+      <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
+    </div>
+  </body>
+</html>
