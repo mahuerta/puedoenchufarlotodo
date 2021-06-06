@@ -84,6 +84,14 @@
         background: none;
         text-align: center;
       }
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 26px;
+        }
+        #info span {
+          display: none;
+        }
+      }
     </style>
 
     <h1>¿Puedo enchufarlo todo?</h1>
@@ -95,11 +103,11 @@
       var html;
 
       var html_punta =
-        '<h2>NO</h2><h3 class="red">HORA PUNTA</h3><h3>Poner la lavadora sale caro, asi que vete a pasear 🚶‍♂️</h3>';
+        '<h2>NO</h2><h3 class="red">HORA PUNTA</h3><br /><h3>Poner la lavadora sale caro, asi que vete a pasear 🚶‍♂️</h3>';
       var html_llana =
-        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA</h3><h3>Hacer unas costillas al horno aun sale rentable 🍖</h3>';
+        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA</h3><br /><h3>Hacer unas costillas al horno aun sale rentable 🍖</h3>';
       var html_valle =
-        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><h3>Aprovecha y dale caña a la depuradora 🏊</h3>';
+        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><br /><h3>Aprovecha y dale caña a la depuradora 🏊</h3>';
 
       var NATIONAL_HOLIDAYS = [
         "Fri Jan 01 2021",
