@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <title>¿Puedo enchufarlo todo?</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>¿Puedo lavar la ropa ya?</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="¿Puedo enchufarlo todo?" />
+    <link rel="shortcut icon" href="yes-icon.png" />
   </head>
 
   <body>
@@ -20,7 +23,10 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-RY06KCG7GN", { cookie_domain: 'puedoenchufar.me', cookie_flags: 'SameSite=None;Secure' });
+      gtag("config", "G-RY06KCG7GN", {
+        cookie_domain: "puedoenchufar.me",
+        cookie_flags: "SameSite=None;Secure",
+      });
     </script>
 
     <style>
@@ -45,23 +51,42 @@
       }
 
       .green {
-        border-bottom: 5px green solid;
+        border-bottom: 5px rgb(29, 247, 29) solid;
       }
 
       .red {
-        border-bottom: 5px red solid;
+        border-bottom: 5px rgb(247, 27, 27) solid;
       }
 
       .yellow {
-        border-bottom: 5px yellow solid;
+        border-bottom: 5px rgb(233, 233, 7) solid;
       }
 
       a {
+        text-decoration: none;
         color: black;
+      }
+
+      #btn_media {
+        cursor: pointer;
+        font-size: 15px;
+        border: 5px black solid;
+        margin-bottom: 40px;
+        margin-left: -100px;
+        width: 200px;
+        padding: 15px 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        color: black;
+        background: none;
+        text-align: center;
       }
     </style>
 
-    <h1>¿Puedo lavar la ropa ya?</h1>
+    <h1>¿Puedo enchufarlo todo?</h1>
 
     <script>
       var date = new Date();
@@ -70,11 +95,11 @@
       var html;
 
       var html_punta =
-        '<h2>NO</h2><h3 class="red">HORA PUNTA, prepara la cartera</h3>';
+        '<h2>NO</h2><h3 class="red">HORA PUNTA</h3><h3>Poner la lavadora sale caro, asi que vete a pasear 🚶‍♂️</h3>';
       var html_llana =
-        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA, hacer unas costillas aun salen caras</h3>';
+        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA</h3><h3>Hacer unas costillas al horno aun sale rentable 🍖</h3>';
       var html_valle =
-        '<h2>SÍ</h2><h3 class="green">HORA VALLE, aprovecha y dale caña a la depuradora</h3>';
+        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><h3>Aprovecha y dale caña a la depuradora 🏊</h3>';
 
       var NATIONAL_HOLIDAYS = [
         "Fri Jan 01 2021",
@@ -107,9 +132,33 @@
 
       document.write(html);
 
+      // favicon on the browser
+      if (html.indexOf("PUNTA") > -1) {
+        document.querySelector('link[rel~="icon"]').href = "no-icon.png";
+      }
+
       setTimeout(function () {
         document.getElementById("info").style.display = "block";
       }, 1300);
+
+      function share() {
+        var share_title = document.title;
+        var share_url = document.location.href;
+
+        if (navigator.share) {
+          navigator.share({
+            title: share_title,
+            url: share_url,
+          });
+        } else {
+          window.open(
+            "https://twitter.com/intent/tweet?text=" +
+              encodeURIComponent(share_title) +
+              "&tw_p=tweetbutton&url=" +
+              encodeURIComponent(share_url)
+          );
+        }
+      }
     </script>
 
     <div id="info" style="display: none">
@@ -118,5 +167,6 @@
       Hecho con ❤️ por
       <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
     </div>
+    <button onclick="share()" id="btn_media">Compartelo 🐦</button>
   </body>
 </html>
