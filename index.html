@@ -47,25 +47,29 @@
       * {
         font-family: arial;
         text-align: center;
+        background-color: black;
       }
 
       h1 {
         font-size: 50px;
+        color: white;
       }
 
       h2 {
         font-size: 120px;
         margin: 0;
+        color: white;
       }
 
       h3 {
         font-size: 30px;
         display: inline-block;
         margin-top: 10px;
+        color: white;
       }
 
       .green {
-        border-bottom: 5px rgb(29, 247, 29) solid;
+        border-bottom: 5px rgb(147, 230, 70) solid;
       }
 
       .red {
@@ -78,13 +82,13 @@
 
       a {
         text-decoration: none;
-        color: black;
+        color: white;
       }
 
       #btn_media {
         cursor: pointer;
         font-size: 15px;
-        border: 5px black solid;
+        border: 5px white solid;
         margin-bottom: 40px;
         margin-left: -100px;
         width: 200px;
@@ -94,13 +98,16 @@
         position: fixed;
         left: 50%;
         bottom: 0;
-        color: black;
+        color: white;
         background: none;
         text-align: center;
       }
       @media screen and (max-width: 480px) {
         h1 {
-          font-size: 26px;
+          font-size: 25px;
+        }
+        h3 {
+          font-size: 20px;
         }
         #info span {
           display: none;
@@ -108,20 +115,24 @@
       }
     </style>
 
-    <h1>¿Puedo enchufarlo todo?</h1>
+    <h3 id='titleWithHours'>Son las ¿Puedo todo?</h3>
+    <h1 id='principalTitle'>¿Puedo enchufarlo todo?</h1>
 
     <script>
       var date = new Date();
       var hour = date.getHours();
+      var minutes = date.getMinutes();
       var day = date.getDay();
       var html;
 
+      const hoursElement = document.getElementById('titleWithHours');
+      hoursElement.textContent = 'Son las '+hour+':'+(minutes<10?'0'+minutes:minutes);
       var html_punta =
-        '<h2>NO</h2><h3 class="red">HORA PUNTA</h3><br /><h3>Poner la lavadora sale caro, asi que vete a pasear 🚶‍♂️</h3>';
+        '<div id="punta"><h2>NO</h2><h3 class="red">HORA PUNTA</h3><br /><h3>Poner la lavadora sale caro, así que vete a pasear 🚶‍♂️</h3></div>';
       var html_llana =
         '<h2>SÍ</h2><h3 class="yellow">HORA LLANA</h3><br /><h3>Hacer unas costillas al horno aun sale rentable 🍖</h3>';
       var html_valle =
-        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><br /><h3>Aprovecha y dale caña a la depuradora 🏊</h3>';
+        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><br /><h3>Aprovecha y pon la lavadora 🏊</h3>';
 
       var NATIONAL_HOLIDAYS = [
         "Fri Jan 01 2021",
@@ -153,6 +164,9 @@
       }
 
       document.write(html);
+      //const punta = document.getElementById('punta');
+      //punta.style = 'background-color: rgb(184, 236, 86)';
+
 
       // favicon on the browser
       if (html.indexOf("PUNTA") > -1) {
@@ -162,6 +176,10 @@
       setTimeout(function () {
         document.getElementById("info").style.display = "block";
       }, 1300);
+
+      function hour() {
+        return hour;
+      }
 
       function share() {
         var share_title = document.title;
@@ -186,7 +204,7 @@
     <div id="info" style="display: none">
       <br /><br /><br />
 
-      Hecho con ❤️ por
+      <a>Hecho con ❤️ por </a>
       <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
     </div>
     <button onclick="share()" id="btn_media">Compartelo 🐦</button>
