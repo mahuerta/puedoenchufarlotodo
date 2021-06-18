@@ -18,8 +18,7 @@ const hoursElement = document.getElementById('titleWithHours');
 const calendar = document.getElementById('calendar');
 
 priceElement.textContent = `${price}`;
-hoursElement.textContent =
-    "Son las " + userHour + ":" + (userMinutes);
+hoursElement.textContent = 'Son las ' + userHour + ':' + userMinutes;
 
 const getZone = zone =>
   zone === 'valle' ? '#a2fcc1' : zone === 'llano' ? '#ffae3a' : '#ec1d2f';
@@ -47,7 +46,6 @@ if (zone === 'punta') {
   document.querySelector('link[rel~="icon"]').href = 'no-icon.png';
 } else if (zone === 'valle') {
   yesNoMessage.textContent = 'SÍ';
-  zoneMessage.className = 'green';
   zoneMessage.textContent = 'ZONA VALLE';
   principalMessage.textContent = 'Aprovecha y pon la lavadora 🏊';
 } else {
