@@ -1,213 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>¿Puedo enchufarlo todo?</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/yes-icon.977c0987.png" />
-    <meta
-      property="og:image"
-      content="https://puedoenchufar.me/share-image.png"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://puedoenchufar.me/share-image.png"
-    />
-    <meta property="og:image:alt" content="¿Puedo enchufarlo todo?" />
-    <meta property="og:image:type" content="image/png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="¿Puedo enchufarlo todo?" />
-    <meta
-      name="twitter:image"
-      content="https://puedoenchufar.me/share-image.png"
-    />
-  <script type="module" crossorigin src="/assets/index.aa78867d.js"></script>
+
+<head>
+  <title>¿Puedo enchufarlo todo?</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/assets/yes-icon.977c0987.png" />
+  <meta property="og:image" content="https://puedoenchufar.me/share-image.png" />
+  <meta property="og:image:secure_url" content="https://puedoenchufar.me/share-image.png" />
+  <meta property="og:image:alt" content="¿Puedo enchufarlo todo?" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="¿Puedo enchufarlo todo?" />
+  <meta name="twitter:image" content="https://puedoenchufar.me/share-image.png" />
+  
+<script type="module" crossorigin src="/assets/index.e803cbf3.js"></script>
+  <link rel="stylesheet" href="/assets/index.0be7ec7d.css">
 </head>
 
-  <body>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RY06KCG7GN"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<body>
+  <!--   Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY06KCG7GN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-      gtag("config", "G-RY06KCG7GN", {
-        cookie_domain: "puedoenchufar.me",
-        cookie_flags: "SameSite=None;Secure",
-      });
-    </script>
+    gtag('config', 'G-RY06KCG7GN', {
+      cookie_domain: 'puedoenchufar.me',
+      cookie_flags: 'SameSite=None;Secure'
+    });
+  </script>
 
-    <style>
-      * {
-        font-family: arial;
-        text-align: center;
-        background-color: black;
-      }
+  <style>
+    
+  </style>
 
-      h1 {
-        font-size: 50px;
-        color: white;
-      }
-
-      h2 {
-        font-size: 120px;
-        margin: 0;
-        color: white;
-      }
-
-      h3 {
-        font-size: 30px;
-        display: inline-block;
-        margin-top: 10px;
-        color: white;
-      }
-
-      .green {
-        border-bottom: 5px rgb(147, 230, 70) solid;
-      }
-
-      .red {
-        border-bottom: 5px rgb(247, 27, 27) solid;
-      }
-
-      .yellow {
-        border-bottom: 5px rgb(233, 233, 7) solid;
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-
-      #btn_media {
-        cursor: pointer;
-        font-size: 15px;
-        border: 5px white solid;
-        margin-bottom: 40px;
-        margin-left: -100px;
-        width: 200px;
-        padding: 15px 0;
-        text-transform: uppercase;
-        font-weight: bold;
-        position: fixed;
-        left: 50%;
-        bottom: 0;
-        color: white;
-        background: none;
-        text-align: center;
-      }
-      @media screen and (max-width: 480px) {
-        h1 {
-          font-size: 25px;
-        }
-        h3 {
-          font-size: 20px;
-        }
-        #info span {
-          display: none;
-        }
-      }
-    </style>
-
-    <h3 id='titleWithHours'>Son las ¿Puedo todo?</h3>
-    <h1 id='principalTitle'>¿Puedo enchufarlo todo?</h1>
-
-    <script>
-      var date = new Date();
-      var hour = date.getHours();
-      var minutes = date.getMinutes();
-      var day = date.getDay();
-      var html;
-
-      const hoursElement = document.getElementById('titleWithHours');
-      hoursElement.textContent = 'Son las '+hour+':'+(minutes<10?'0'+minutes:minutes);
-      var html_punta =
-        '<div id="punta"><h2>NO</h2><h3 class="red">HORA PUNTA</h3><br /><h3>Poner la lavadora sale caro, así que vete a pasear 🚶‍♂️</h3></div>';
-      var html_llana =
-        '<h2>SÍ</h2><h3 class="yellow">HORA LLANA</h3><br /><h3>Hacer unas costillas al horno aun sale rentable 🍖</h3>';
-      var html_valle =
-        '<h2>SÍ</h2><h3 class="green">HORA VALLE</h3><br /><h3>Aprovecha y pon la lavadora 🏊</h3>';
-
-      var NATIONAL_HOLIDAYS = [
-        "Fri Jan 01 2021",
-        "Wed Jan 06 2021",
-        "Fri Apr 02 2021",
-        "Sat May 01 2021",
-        "Tue Oct 12 2021",
-        "Mon Nov 01 2021",
-        "Mon Dec 06 2021",
-        "Wed Dec 08 2021",
-        "Sat Dec 25 2021",
-      ];
-
-      // sabado - domingo
-      if (
-        day == 6 ||
-        day == 0 ||
-        NATIONAL_HOLIDAYS.includes(date.toDateString())
-      ) {
-        html = html_valle;
-      } else {
-        if ((hour >= 10 && hour <= 13) || (hour >= 18 && hour <= 21)) {
-          html = html_punta;
-        } else if (hour >= 0 && hour <= 7) {
-          html = html_valle;
-        } else {
-          html = html_llana;
-        }
-      }
-
-      document.write(html);
-      //const punta = document.getElementById('punta');
-      //punta.style = 'background-color: rgb(184, 236, 86)';
-
-
-      // favicon on the browser
-      if (html.indexOf("PUNTA") > -1) {
-        document.querySelector('link[rel~="icon"]').href = "no-icon.png";
-      }
-
-      setTimeout(function () {
-        document.getElementById("info").style.display = "block";
-      }, 1300);
-
-      function hour() {
-        return hour;
-      }
-
-      function share() {
-        var share_title = document.title;
-        var share_url = document.location.href;
-
-        if (navigator.share) {
-          navigator.share({
-            title: share_title,
-            url: share_url,
-          });
-        } else {
-          window.open(
-            "https://twitter.com/intent/tweet?text=" +
-              encodeURIComponent(share_title) +
-              "&tw_p=tweetbutton&url=" +
-              encodeURIComponent(share_url)
-          );
-        }
-      }
-    </script>
-
-    <div id="info" style="display: none">
-      <br /><br /><br />
-
-      <a>Hecho con ❤️ por </a>
-      <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
+  <main>
+    <br />
+    <h3 id="titleWithHours" class="container-hour-datetime">
+    </h3>
+    <h1 id="principalTitle">¿Puedo enchufarlo todo?</h1>
+    <section class="container">
+      <article class="container-hour">
+        <h2 id="yesNoMessage"></h2>
+        <h3 id="zoneMessage"></h3>
+        <br />
+        <h3 id="principalMessage"></h3>
+      </article>
+    </section>
+    <div class="container-hour-price">
+      <span id="price"></span><span class="container-euro-kwm"> €/kWh</span>
+      <p class="taxes">precio sin impuestos</p>
     </div>
-    <button onclick="share()" id="btn_media">Compartelo 🐦</button>
-  </body>
+    <br />
+    <section class="container-calendar">
+      <div id="calendar" class="container-calendar-grid"></div>
+      <div id="info" style="display: none">
+        <br />
+        <a>Hecho con 🍺 por </a>
+        <a href="https://twitter.com/mighuerta_/" target="_blank">@mighuerta_</a>
+        <br />
+      </div>
+    </section>
+  </main>
+  <button id="btn_media">🐦</button>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="mighuerta" data-description="Support me on Buy me a beer!"
+    data-message="Si te ha gustado, aquí puedes apoyarme. Gracias! :D" data-color="#5F7FFF" data-position="Right"
+    data-x_margin="18" data-y_margin="18"></script>
+  
+</body>
+
 </html>
