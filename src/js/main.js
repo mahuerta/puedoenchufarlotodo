@@ -2,6 +2,7 @@ import './../css/styless.css';
 import data from '../../public/postprocessed-cost.json';
 import { week, weekEnd } from './templates.js';
 import { reloadPage, share } from './utils.js';
+import noIcon from '../../assets/no-icon.png';
 
 let userHour = new Date().getHours();
 let userMinutes = new Date().getMinutes();
@@ -43,7 +44,7 @@ if (zone === 'punta') {
   zoneMessage.textContent = 'ZONA PUNTA';
   principalMessage.textContent =
     'Poner la lavadora sale caro, así que vete a pasear 🚶‍♂️';
-  document.querySelector('link[rel~="icon"]').href = 'no-icon.png';
+  document.querySelector('link[rel~="icon"]').href = noIcon;
 } else if (zone === 'valle') {
   yesNoMessage.textContent = 'SÍ';
   zoneMessage.textContent = 'ZONA VALLE';
