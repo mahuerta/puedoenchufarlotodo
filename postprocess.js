@@ -8,7 +8,7 @@ const filteredData = json.PVPC.map(({ Dia, Hora, PCB }) => {
   const day = new Date().getDay();
 
   return {
-    day: Dia,
+    day: Dia+1,
     hour: +getFirstHour,
     price: +PCB.split(',')[0] / 1000,
     zone: getZone(+getFirstHour,Dia,day)
