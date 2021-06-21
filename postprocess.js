@@ -6,12 +6,14 @@ const json = await readJSON(filename)
 const filteredData = json.PVPC.map(({ Dia, Hora, PCB }) => {
   const getFirstHour = Hora.split('-')[0];
   const day = new Date().getDay();
+  //Fix problems on postProcess weekends
+  ++day;
 
   return {
     day: Dia,
     hour: +getFirstHour,
     price: +PCB.split(',')[0] / 1000,
-    zone: getZone(+getFirstHour,Dia,++day)
+    zone: getZone(+getFirstHour,Dia,day)
   };
 });
 
