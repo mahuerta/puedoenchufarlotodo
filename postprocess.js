@@ -5,9 +5,8 @@ const json = await readJSON(filename)
 
 const filteredData = json.PVPC.map(({ Dia, Hora, PCB }) => {
   const getFirstHour = Hora.split('-')[0];
-  const day = new Date().getDay();
   //Fix problems on postProcess weekends
-  day = ++day;
+  const day = new Date().getDay()+1;
 
   return {
     day: Dia,
