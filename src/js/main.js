@@ -39,6 +39,9 @@ setTimeout(function () {
   document.getElementById('info').style.display = 'block';
 }, 1300);
 
+/**
+ * All logic of the hours
+ */
 if (zone === 'punta') {
   yesNoMessage.textContent = 'NO';
   zoneMessage.textContent = 'ZONA PUNTA';
