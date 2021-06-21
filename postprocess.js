@@ -7,7 +7,7 @@ const filteredData = json.PVPC.map(({ Dia, Hora, PCB }) => {
   const getFirstHour = Hora.split('-')[0];
   const day = new Date().getDay();
   //Fix problems on postProcess weekends
-  ++day;
+  day = ++day;
 
   return {
     day: Dia,
