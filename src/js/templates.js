@@ -21,7 +21,7 @@ export const week = `<div class="container-calendar-element valle">
         <div class="container-calendar-element punta">
           <span class="container-calendar-element-hour">18:00 - 22:00</span>
           <span class="container-calendar-element-text">Hora punta</span>
-          <span class="container-calendar-element-text">La más barata</span>
+          <span class="container-calendar-element-text">La más cara</span>
         </div>
         <div class="container-calendar-element intermedia">
           <span class="container-calendar-element-hour">22:00 - 24:00</span>
